@@ -1,9 +1,14 @@
 <h1>remEMBER: SPLINTER</h1>
 
 {{#each model as |reminder|}}
-  <div class="reminder-item">
+  <div  class="reminder-item">
+    {{#link-to 'reminder' reminder.number}}
+      <h1>{{reminder.number}}</h1>
+    {{/link-to}}
+
     <h3>{{reminder.title}}</h3>
     <p>{{reminder.body}}</p>
+    <p>{{reminder.date}}</p>
   </div>
 {{/each}}
 

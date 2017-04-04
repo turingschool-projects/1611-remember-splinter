@@ -4,5 +4,5 @@ export default Factory.extend({
   title: () => faker.lorem.words().capitalize(),
   date: () => faker.date.recent(3),
   body: () => faker.lorem.paragraph(),
-  // id: () => faker.id.
+  number: () => faker.random.number()
 });
