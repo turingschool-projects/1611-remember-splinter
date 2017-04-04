@@ -18,10 +18,10 @@ test('index route redirects to /reminders', function(assert) {
   });
 });
 
-skip('clicking on an individual item', function(assert) {
+test('clicking on an individual item', function(assert) {
   server.createList('reminder', 5);
 
-  visit('/reminders');
+  visit('/');
   click('.reminder-item:first');
 
   andThen(function() {

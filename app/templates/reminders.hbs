@@ -1,13 +1,10 @@
 <h1>remEMBER: SPLINTER</h1>
 
 {{#each model as |reminder|}}
-  <div  class="reminder-item">
-    {{#link-to 'reminders.reminder' reminder}}
+{{#link-to 'reminders.reminder' reminder}}
+  <div class="reminder-item">
       <h3>{{reminder.title}}</h3>
-    {{/link-to}}
-    <p>{{reminder.body}}</p>
-    <p>{{reminder.date}}</p>
   </div>
+  {{/link-to}}
 {{/each}}
-
 {{outlet}}
