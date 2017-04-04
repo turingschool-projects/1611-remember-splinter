@@ -7,21 +7,21 @@ import Ember from 'ember';
 
 moduleForAcceptance('Acceptance | reminders list');
 
-test('viewing the homepage', function(assert) {
+test('index route redirects to /reminders', function(assert) {
   server.createList('reminder', 5);
 
   visit('/');
 
   andThen(function() {
-    assert.equal(currentURL(), '/');
+    assert.equal(currentURL(), '/reminders');
     assert.equal(Ember.$('.reminder-item').length, 5);
   });
 });
 
-skip('clicking on an individual item', function(assert) {
+test('clicking on an individual item', function(assert) {
   server.createList('reminder', 5);
 
-  visit('/reminders');
+  visit('/');
   click('.reminder-item:first');
 
   andThen(function() {
