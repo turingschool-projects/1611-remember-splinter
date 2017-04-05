@@ -61,4 +61,28 @@ test('user can create a new reminder', function(assert) {
   andThen(function() {
     assert.equal(Ember.$('.reminder-item').length, 6);
   });
+
+test('if there are no reminders on the page, a message will display', function(assert) {
+  server.createList('reminder', 0);
+
+  visit('/')
+
+  andThen(function () {
+    assert.equal(Ember.$('.reminder-item').length, 0);
+    assert.equal(Ember.$('.message').length, 1)
+  })
+
+  click('.create');
+  fillIn('.title-input', 'test title');
+  fillIn('.body-input', 'test body');
+  fillIn('.date-input', 'test date');
+  click('.add-reminder');
+
+  andThen(function () {
+    assert.equal(Ember.$('.reminder-item').length, 1);
+    assert.equal(Ember.$('.message').length, 0)
+  })
+
+});
+
 });
