@@ -11,7 +11,7 @@ export default Ember.Controller.extend({
     submitReminder() {
       const reminder = this.getProperties('title', 'body', 'date');
       this.get('store').createRecord('reminder', reminder).save().then(() => {
-        this.setProperties({title: '', body: '', date: ''})
+        this.setProperties({title: '', body: '', date: ''});
       });
     }
   }
