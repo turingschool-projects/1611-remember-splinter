@@ -1,17 +1,29 @@
 <h1>remEMBER: SPLINTER</h1>
 
-{{#each model as |reminder|}}
-  {{#link-to 'reminders.reminder' reminder}}
-    <div class="reminder-item">
-        <h3>{{reminder.title}}</h3>
-    </div>
-  {{/link-to}}
-{{/each}}
+{{#if model }}
 
-{{#link-to 'reminders.new'}}
-  <button class="create">
-    Create New Reminder
-  </button>
-{{/link-to}}
+  {{#each model as |reminder|}}
+    {{#link-to 'reminders.reminder' reminder}}
+      <div class="reminder-item">
+          <h3>{{reminder.title}}</h3>
+      </div>
+    {{/link-to}}
+  {{/each}}
+  {{#link-to 'reminders.new'}}
+    <button class="create">
+      Create New Reminder
+    </button>
+  {{/link-to}}
+
+{{else}}
+
+  <h2>Please add a reminder</h2>
+  {{#link-to 'reminders.new'}}
+    <button class="create">
+      Create New Reminder
+    </button>
+  {{/link-to}}
+
+{{/if}}
 
 {{outlet}}
