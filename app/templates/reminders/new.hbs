@@ -1,12 +1,16 @@
 <div class="add-reminder">
 
-  {{input class="title-input" type="text" value=model.title placeholder="Enter Title"}}
+  {{input class="title-input" type="text" value=title placeholder="Enter Title"}}
 
-  {{input class="body-input" type="text" value=model.body placeholder="Enter Reminder"}}
+  <br>
 
-  {{input class="date-input" type="text" value=model.date placeholder="Enter Date"}}
+  {{input class="body-input" type="text" value=body placeholder="Enter Reminder"}}
 
-  <button {{action 'select' model}}
+  <br>
+
+  {{input class="date-input" type="date" value=date placeholder="Enter Date"}}
+  <br>
+  <button {{action 'submitReminder'}}
     class="add-reminder">
     Add Reminder
   </button>

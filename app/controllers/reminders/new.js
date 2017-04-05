@@ -2,10 +2,18 @@
 import Ember from 'ember';
 
 export default Ember.Controller.extend({
+
+  title: '',
+  body: '',
+  date: '',
+
   actions: {
-    select(model) {
-      // console.log('i am the date ' + (model.date).toString())
-      model.save()
+    submitReminder() {
+      const reminder = this.getProperties('title', 'body', 'date');
+      this.get('store').createRecord('reminder', reminder).save().then(() => {
+        this.setProperties({title: '', body: '', date: ''})
+      });
+      // this.transitionTo('reminders')
     }
   }
 });
