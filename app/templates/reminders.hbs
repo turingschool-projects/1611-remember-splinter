@@ -3,12 +3,15 @@
 {{#if model }}
 
   {{#each model as |reminder|}}
+
     {{#link-to 'reminders.reminder' reminder}}
       <div class="reminder-item">
           <h3>{{reminder.title}}</h3>
       </div>
     {{/link-to}}
+
   {{/each}}
+  
   {{#link-to 'reminders.new'}}
     <button class="create">
       Create New Reminder
