@@ -1,0 +1,16 @@
+<div class="add-reminder">
+
+  {{input class="title-input" type="text" value=title placeholder="Enter Title"}}
+
+  {{input class="body-input" type="text" value=body placeholder="Enter Reminder"}}
+
+  {{input class="date-input" type="date" value=date placeholder="Enter Date"}}
+
+  <button {{action 'submitReminder'}}
+    class="add-reminder">
+    Add Reminder
+  </button>
+
+</div>
+
+{{outlet}}
