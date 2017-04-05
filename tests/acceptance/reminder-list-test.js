@@ -29,3 +29,16 @@ test('clicking on an individual item', function(assert) {
     assert.equal(Ember.$('.reminder-item:first').text().trim(), Ember.$('.reminder-title').text().trim());
   });
 });
+
+test('clicking add new reminder reroutes to reminder/new', function(assert) {
+  server.createList('reminder', 5);
+
+  visit('/');
+  click('.create');
+
+
+  andThen(function() {
+    assert.equal(currentURL(), '/reminders/new');
+    assert.equal(Ember.$('input[type="text"]').length, 4);
+  });
+});
