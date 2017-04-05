@@ -38,7 +38,7 @@ test('clicking add new reminder reroutes to reminder/new', function(assert) {
 
   andThen(function() {
     assert.equal(currentURL(), '/reminders/new');
-    assert.equal(Ember.$('input[type="text"]').length, 4);
+    assert.equal(Ember.$('input[type="text"]').length, 3);
   });
 });
 
@@ -46,11 +46,12 @@ test('user can create a new reminder', function(assert) {
   server.createList('reminder', 5);
 
   visit('/');
-  click('.create');
 
-  // andThen(function() {
-  //   assert.equal(Ember.$('.reminder-item').length, 5);
-  // });
+  andThen(function() {
+    assert.equal(Ember.$('.reminder-item').length, 5);
+  });
+
+  click('.create');
 
   fillIn('.title-input', 'test title');
   fillIn('.body-input', 'test body');
