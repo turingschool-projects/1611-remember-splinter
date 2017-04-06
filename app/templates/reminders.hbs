@@ -10,8 +10,12 @@
       </div>
     {{/link-to}}
 
+    <button {{action 'removeReminder' reminder}} class="delete-btn">
+      Delete Me
+    </button>
+
   {{/each}}
-  
+
   {{#link-to 'reminders.new'}}
     <button class="create">
       Create New Reminder
