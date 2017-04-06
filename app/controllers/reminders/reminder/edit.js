@@ -1,11 +1,6 @@
- // CONTROLLER
 import Ember from 'ember';
 
 export default Ember.Controller.extend({
-
-  title: '',
-  body: '',
-  date: '',
 
   actions: {
     submitReminder() {
@@ -16,4 +11,5 @@ export default Ember.Controller.extend({
       });
     }
   }
-});
+
+})

@@ -1,3 +1,87 @@
+body {
+  background-color: #EFEFEF;
+}
+
+h1 {
+  text-align: center;
+  margin: 10px 0;
+}
+
+h3 {
+  margin: 10px;
+}
+
+a {
+  color: #000;
+}
+
+button {
+  background-color: #CAEBF2;
+  color: #000;
+  padding: 7px;
+  font-size: 13px;
+}
+
+button:hover {
+  background-color: #FF3B3F;
+}
+
+.delete-btn {
+  margin-bottom: 3px;
+}
+
+input {
+  margin-bottom: 10px;
+}
+
+.create {
+  background-color: #FF3B3F;
+  color: #fff;
+  margin-top: 20px;
+  width: 100%;
+}
+
+.create:hover {
+  background-color: #CAEBF2;
+}
+
+.gif {
+  margin-top: 10px;
+  width: 250px;
+}
+
 .active {
-  color: pink;
+  color: #FF3B3F;
+  text-decoration: underline;
+}
+
+.all-things {
+  display: flex;
+}
+
+.all-reminder,
+.reminder-item {
+  flex: 2;
+}
+
+.reminder-item {
+  margin-bottom: 5px;
+  border: 2px solid #FF3B3F;
+  background-color: #fff;
+  padding: 5px;
+}
+
+.all-reminder {
+  margin-right: 20px;
+}
+
+.add-reminder {
+  display: flex;
+  flex-direction: column;
+  flex: 2;
+  background-color: #000;
+  padding: 30px;
+  display: flex;
+  justify-content: center;
+  height: 20%;
 }

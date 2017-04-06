@@ -1,0 +1,12 @@
+<div class="add-reminder">
+
+  {{input class="title-input" type="text" value=model.title }}
+  {{input class="body-input" type="text" value=model.body }}
+  {{input class="date-input" type="date" value=model.date }}
+
+  <button {{action 'submitReminder' model}}
+    class="save">
+    Save
+  </button>
+
+</div>
