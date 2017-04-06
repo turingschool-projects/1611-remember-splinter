@@ -1,36 +1,39 @@
 <h1>remEMBER: SPLINTER</h1>
 
-{{#if model }}
+<div class="all-things">
 
+{{#if model }}
+  <div class="all-reminder">
   {{#each model as |reminder|}}
 
+  <div class="reminder-item">
     {{#link-to 'reminders.reminder' reminder}}
-      <div class="reminder-item">
-          <h3>{{reminder.title}}</h3>
-      </div>
+        <h3>{{reminder.title}}</h3>
     {{/link-to}}
 
-    <button {{action 'removeReminder' reminder}} class="delete-btn">
-      Delete Me
-    </button>
+      <button {{action 'removeReminder' reminder}} class="delete-btn">
+        Delete Me
+      </button>
+    </div>
 
   {{/each}}
-
-  {{#link-to 'reminders.new'}}
-    <button class="create">
-      Create New Reminder
-    </button>
-  {{/link-to}}
+  </div>
 
 {{else}}
 
   <h2 class="message">Please add a reminder</h2>
-  {{#link-to 'reminders.new'}}
-    <button class="create">
-      Create New Reminder
-    </button>
-  {{/link-to}}
 
 {{/if}}
 
+
 {{outlet}}
+
+</div>
+
+{{#link-to 'reminders.new'}}
+  <button class="create">
+    Create New Reminder
+  </button>
+{{/link-to}}
+
+<img src="http://38.media.tumblr.com/b33d2902d3e39d31231e0c02398534a6/tumblr_n6amckmAkz1rpfx57o2_r1_500.gif" alt="image of splinter and turtles" class="gif">
